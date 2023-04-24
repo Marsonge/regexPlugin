@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.0.6] - 2023-04-24
+### Fixed
+
+- Compatibility listing
+- Description
+
 ## [0.0.5] - 2023-04-24
 ### Fixed
 
