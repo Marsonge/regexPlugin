@@ -23,7 +23,7 @@ public class RegexPluginToolWindowFactory implements ToolWindowFactory, DumbAwar
     } catch (Exception e) {
       e.printStackTrace();
     }
-    ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
+    ContentFactory contentFactory = ContentFactory.getInstance();
     Content content = contentFactory.createContent(myToolWindow.getContent(), "", false);
     toolWindow.getContentManager().addContent(content);
   }

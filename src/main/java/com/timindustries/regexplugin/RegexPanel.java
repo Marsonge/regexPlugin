@@ -387,7 +387,7 @@ public class RegexPanel extends JPanel {
 
   private JTextPane createHtmlOutputPane() {
     final JTextPane res = new JTextPane();
-    var font = uiFactory.getDefaultFont().deriveFont(48f);
+    var font = uiFactory.getDefaultFont().deriveFont(36f);
     res.setFont(font);
     res.setEditable(false);
     res.setContentType("text/html");

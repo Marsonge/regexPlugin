@@ -149,8 +149,10 @@ public class MatchAction extends GenericAction {
       final String beforeMatch = text.substring(idx, match.getStartIdx());
       out.append(convertToHTML(beforeMatch));
 
+      final String allTextBeforeMatch = text.substring(0, match.getStartIdx());
+
       String totalLine = match.groups.get(0).text;
-      var decal = -1*beforeMatch.length();
+      var decal = -1*allTextBeforeMatch.length();
       for(int j = 1; j < match.groups.size(); j++){
           String fragment = "".concat("<span style=\"background-color:").concat(randomRgba())
                 .concat("\">")
@@ -165,7 +167,7 @@ public class MatchAction extends GenericAction {
       out.append("<a href=\"http://")
               .append(matchIdx)
               .append("\"><span style=\"background-color:")
-              .append("rgba(0, 255, 0, 0.2)")
+              .append("rgba(0, 255," + (matchIdx % 2 == 0 ? "0" : "145") + ",0.2)")
               .append("\">")
               .append(totalLine)
               .append("</span></a>");
@@ -182,16 +184,10 @@ public class MatchAction extends GenericAction {
   }
 
   private static int calculateEndFragmentIndexOffset(Match match, int decal, int j) {
-    if(j==1){
-      return match.groups.get(j).endIdx + decal;
-    }
     return match.groups.get(j).endIdx + decal;
   }
 
   private static int calculateStartFragmentIndexOffset(Match match, int j, int decal) {
-    if(j==1){
-      return match.groups.get(j).startIdx + decal;
-    }
     return match.groups.get(j).startIdx + decal;
   }
 
@@ -200,7 +196,7 @@ public class MatchAction extends GenericAction {
   }
 
   private String randomRgba(){
-    return String.format("rgba(%d, %d, %d, 0.6)", (int)(Math.random()*1000)%255, (int)(Math.random()*1000)%100,(int)(Math.random()*1000)%255);
+    return String.format("rgba(%d, %d, %d, 0.6)", (int)(Math.random()*1000)%255, (int)(Math.random()*1000)%200,(int)(Math.random()*1000)%255);
   }
 
   public void setReplaceAll(final boolean b) {

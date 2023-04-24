@@ -1,6 +1,6 @@
 <idea-plugin>
-  <id>com.timindustries.regexplugin</id>
-  <name>RegexPlugin</name>
+  <id>com.timindustries.regexpluginv2</id>
+  <name>Regex Helper</name>
   <vendor email="tim.gallois.c@gmail.com">Tim Gallois</vendor>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">

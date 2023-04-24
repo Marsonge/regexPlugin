@@ -1,9 +1,9 @@
 package com.timindustries.regexplugin;
 
-import javax.swing.*;
-
 import com.intellij.openapi.wm.ToolWindow;
 import com.timindustries.regexplugin.uiInterface.ComponentFactory;
+
+import javax.swing.*;
 
 public class RegexPluginToolWindow {
 
